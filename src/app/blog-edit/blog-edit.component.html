@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row" *ngIf="currentBlog">
+        <div class="col-md-12">
+        <form #myform = "ngForm" (ngSubmit) = "editBlog(myform)" >
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input type = "text" class="form-control" name = "title" placeholder = "Your full name" [(ngModel)]="currentBlog.title">
+            </div>
+          
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <input type = "text" class="form-control" name = "description" placeholder = "Describe your blog here.." [(ngModel)]="currentBlog.description">
+            </div>
+        
+            <div class="form-group">
+                <label>Enter Blog Body</label>
+                <textarea type = "text" class="form-control" name = "bodyHtml" [(ngModel)]="currentBlog.bodyHtml"></textarea>
+            </div>
+          
+          
+            <div class="form-group">
+                <label>Category</label>
+                <select  name="blogCategory" class="form-control" id="category" [(ngModel)]="currentBlog.category" required>
+                    
+                    <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                    </select>
+              </div>
+        
+                <div class="form-group">
+                    <label for="Author">Author</label>
+                    <input type = "text" class="form-control" name = "author" placeholder = "Describe your blog here.." [(ngModel)]="currentBlog.author">
+                </div>
+        
+                
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+    </div>
+    </div>
+</div>

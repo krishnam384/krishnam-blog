@@ -1,0 +1,35 @@
+<div class="container">
+<form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type = "text" class="form-control" name = "title" placeholder = "Your full name" ngModel>
+    </div>
+  
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input type = "text" class="form-control" name = "description" placeholder = "Describe your blog here.." ngModel>
+    </div>
+
+    <div class="form-group">
+        <label>Enter Blog Body</label>
+        <textarea type = "text" class="form-control" name = "bodyHtml" ngModel></textarea>
+    </div>
+  
+  
+    <div class="form-group">
+        <label>Category</label>
+        <select  name="blogCategory" class="form-control" id="category" ngModel required>
+              <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+            </select>
+      </div>
+
+        <div class="form-group">
+            <label for="Author">Author</label>
+            <input type = "text" class="form-control" name = "author" placeholder = "Describe your blog here.." ngModel>
+        </div>
+
+        
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
